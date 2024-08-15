@@ -38,7 +38,7 @@ public class Surtidor
         galonesVendidos = new HashMap<String, Double>( );
         for( String nombreTipo : tiposGasolina.keySet( ) )
         {
-            galonesVendidos.put( nombreTipo, new Double( 0 ) );
+        	galonesVendidos.put(nombreTipo, 0.0);
         }
     }
 
@@ -108,7 +108,7 @@ public class Surtidor
 
         // Actualizar la cantidad de gasolina vendida en el surtidor
         double cantidadAnterior = galonesVendidos.get( nombreTipoGasolina );
-        galonesVendidos.put( nombreTipoGasolina, cantidadAnterior - cantidadEntregada );
+        galonesVendidos.put( nombreTipoGasolina, cantidadAnterior + cantidadEntregada );
 
         return precio;
     }
